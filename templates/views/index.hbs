@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RX Banking</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{>header}}
+    <div class="container">
+        <div class="content">
+            {{#if home}}
+            <button class="button" onclick="location.href='/register'">Register</button>
+            <button class="button" onclick="location.href='/login'">Login</button>
+
+            {{else if bank}}
+
+            <button class="button" onclick="location.href='/admin'">Admin</button>
+            <button class="button" onclick="location.href='/user'">User</button>
+
+            {{else if admin}}
+
+            <button class="button" onclick="location.href='/admin/all-transactions'">All Transactions</button>
+            <button class="button" onclick="location.href='/admin/all-users'">All Users</button>
+            <button class="button" onclick="location.href='/admin/all-accounts'">All Accounts</button>
+
+            {{else if user}}
+
+            <button class="button" onclick="location.href='/user/register-page'">Register</button>
+            <button class="button" onclick="location.href='/user/login-page'">Login</button>
+
+            {{else if account}}
+
+            <button class="button" onclick="location.href='/account/register-page'">Register</button>
+            <button class="button" onclick="location.href='/account/login-page'">Login</button>
+            <button class="button" onclick="location.href='/account/user-accounts'">User's accounts</button>
+
+            {{else}}
+
+            <button class="button" onclick="location.href='/transaction/withdraw'">Withdraw</button>
+            <button class="button" onclick="location.href='/transaction/deposit'">Deposit</button>
+            <button class="button" onclick="location.href='/transaction/balance'">Check Balance</button>
+            <button class="button" onclick="location.href='/transaction/account-transactions'">Account
+                Transactions</button>
+
+            {{/if}}
+        </div>
+    </div>
+    {{>footer}}
+</body>
+
+</html>

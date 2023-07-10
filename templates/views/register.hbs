@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <div class="content">
+            {{#if bankRegister}}
+            <form action="bank/register" method="post">
+                <label for="name">Bank name: </label>
+                <input type="text" name="name" required>
+                <input type="submit" value="Register">
+            </form>
+            {{else if userRegister}}
+            <form action="register" method="post">
+                <label for="fname">First Name: </label>
+                <input type="text" name="fname" required><br><br>
+                <label for="lname">Last Name: </label>
+                <input type="text" name="lname" required><br><br>
+                <label for="email">Email: </label>
+                <input type="email" name="email" required>
+                <input type="submit" value="Register">
+            </form>
+            {{else}}
+            <form action="register" method="post">
+                <label for="balance">Initial Balance: </label>
+                <input type="number" name="balance" min="0" value="0" step="1" required>
+                <input type="submit" value="Register">
+            </form>
+            {{/if}}
+        </div>
+
+    </div>
+    {{>footer}}
+</body>
+</html>

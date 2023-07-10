@@ -1,0 +1,43 @@
+body {
+    background-color: azure;
+}
+
+.button {
+	display: block;
+    width: 115px;
+    background: buttontext;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.content {
+    display: flex; 
+    flex-direction: row; 
+    justify-content:space-around
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 9vh;
+}
+
+header h2 {
+    margin-bottom: 0;
+}
+
+footer {
+    text-align: center;
+}
+
+.container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

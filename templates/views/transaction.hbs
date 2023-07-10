@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{#if withdraw}}Withdraw{{else}}Deposit{{/if}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{>header}}
+    <div class="container">
+        <div class="content">
+            {{#if withdraw}}
+            <form action="withdraw" method="post">
+                <label for="amount">Enter withdrawal amount: </label>
+                <input type="number" name="amount" min="1" value="1" step="1" required>
+                <input type="submit" value="Withdraw">
+            </form>
+            {{else}}
+            <form action="deposit" method="post">
+                <label for="deposit">Enter deposit amount: </label>
+                <input type="number" name="amount" min="1" max="10000" value="1" step="1" required>
+                <input type="submit" value="Withdraw">
+            </form>
+            {{/if}}
+        </div>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>
